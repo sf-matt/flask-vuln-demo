@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.9-slim-buster
 
 ARG RUN_AS_NON_ROOT=false
 WORKDIR /app
