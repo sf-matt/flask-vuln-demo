@@ -6,12 +6,10 @@ COPY app.py .
 
 RUN pip install flask
 
-# If requested, create a non-root user
+# Create user and assign permissions if requested
 RUN if [ "$RUN_AS_NON_ROOT" = "true" ]; then \
       useradd -u 1000 flaskuser && \
       chown -R flaskuser /app ; \
     fi
-
-USER ${RUN_AS_NON_ROOT:+flaskuser}
 
 CMD ["python", "app.py"]
