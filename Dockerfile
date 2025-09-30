@@ -1,6 +1,5 @@
-FROM python:3.9-slim-buster
+FROM python:3.11-slim-bookworm
 
-ARG RUN_AS_NON_ROOT=false
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
